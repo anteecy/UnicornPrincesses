@@ -1,0 +1,34 @@
+<% if user_signed_in? && !current_user.is_teacher %>
+    <div id="form-wrapper">
+        <h2>Apply to Become a Grader</h2>
+
+        <%= form_with scope: :applications, local: true do |f| %>
+            <p>
+                <%= f.label :first_name %><br>
+                <%= f.text_field :first_name %><br>
+            </p>
+
+            <p>
+                <%= f.label :last_name %><br>
+                <%= f.text_field :last_name %><br>
+            </p>
+
+            <p>
+                <%= f.label :email %><br>
+                <%= f.email_field :email, :value => current_user.email %><br>
+            </p>
+
+            <p>
+                <%= f.label :courses %><br>
+                <%= f.collection_select :courses, Course.order(:section_number),:section_number,:section_number, include_blank: true %>
+
+            </p>
+
+            <p>
+                <%= f.submit :subaction => 'create'%>
+            </p>
+        <% end %>
+    </div>
+<% else %>
+    <p>Only students may apply to be a grader!</p>
+<% end %>

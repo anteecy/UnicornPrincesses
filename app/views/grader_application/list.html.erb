@@ -1,0 +1,49 @@
+<% if current_user.is_teacher? %>
+
+    <% if @applications.empty? %>
+        <p>Currently no applications!</p>
+    <% else %>
+        <table style="width: 100%">
+            <tr>
+                <th>Applicant</th>
+                <th>Applicant Email</th>
+                <th>Desired Section</th>
+                <th>Course Number</th>
+                <th>View</th>
+                <th>Endorse</th>
+                <th>Approved</th>
+                <th>Rejected</th>
+                <th>Pending</th>
+            </tr>
+        <% @applications.each do |application| %>
+            <tr>
+                <td><%= application.first_name + " " + application.last_name %></td>
+                <td><%= application.email %></td>
+                <td><%= application.courses %></td>
+                <td><%= Course.where(section_number: application.courses).first.course_number %></td>
+                <td><%= link_to 'View', {:controller => "grader_application", :action => "show", :id => application.id } %>
+                <td><%= link_to 'Add', {:controller => "recommandationform", :action => "new", :id => application.id } %>
+                <% if application.status == 1 %>
+                    <td>X</td>
+                <% else %>
+                    <td></td>
+                <%end%>
+                <% if application.status == 2 %>
+                    <td>X</td>
+                <% else %>
+                    <td></td>
+                <%end%>
+                <% if application.status == 0 %>
+                    <td>X</td>
+                <% else %>
+                    <td></td>
+                <%end%>
+            </tr>
+            </a>
+
+        <% end %>
+        </table>
+    <% end %>
+<% else %>
+    <p>You must be registered as a teacher to view this page</p>
+<% end %>

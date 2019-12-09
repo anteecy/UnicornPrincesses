@@ -1,0 +1,13 @@
+tr:nth-child(2n) {
+    background-color: #CCC;
+}
+
+  #attribute{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+table {
+    text-align: center;
+    border: none;
+}

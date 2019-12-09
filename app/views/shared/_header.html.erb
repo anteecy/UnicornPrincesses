@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag "header" %>
+
+<nav>
+    <span><%= link_to "Home", root_path %></span>
+<% if user_signed_in? %>
+    <% if current_user.is_teacher %>
+    	<span><a href="/grader_application/list">Student Application Portal</a></span>
+    <% else %>
+			<span><a href="/grader_application">Grader Applications</a></span>
+        <span><%= link_to "Courses", courses_url %></span>
+    <% end %>
+    <span><%= link_to 'Logout', destroy_user_session_path, method: :delete %></span>
+<% else %>
+    <span><%= link_to 'Login', new_user_session_path %></span>
+<% end %>
+</nav>

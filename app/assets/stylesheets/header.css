@@ -1,0 +1,24 @@
+nav a {
+    text-decoration: None;
+    color: #fafafa;
+    font-size: 2.0rem;
+}
+
+nav a:hover {
+    text-decoration: overline;
+}
+
+nav a:focus {
+    text-decoration: overline;
+}
+
+nav {
+	margin: 0;
+    text-align: right;
+    padding: 2rem;
+    background-color: #424242;
+}
+
+nav span {
+    padding: 2rem;
+}

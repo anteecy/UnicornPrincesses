@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  teacher_id: 
+  recommanded: false
+  context: MyString
+
+two:
+  id: 
+  teacher_id: 
+  recommanded: false
+  context: MyString

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parent_section_number: 
+  section_number: 
+  day: 
+  time: MyString
+
+two:
+  parent_section_number: 
+  section_number: 
+  day: 
+  time: MyString

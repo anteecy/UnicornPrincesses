@@ -1,0 +1,25 @@
+<div>
+   <h3>Applicant:</h3>
+    <p><%= @application.first_name + " " + @application.last_name %></p>
+    
+    <h3>Contact:</h3>
+    <p><%= @application.email %></p>
+    
+    <h3>Desired Section:</h3>
+    <p><%= @application.courses %></p>
+</div>
+
+
+<div>
+	<h3>Teacher:</h3>
+    <p><%= @recommandation.email %></p>
+    
+    <h3>is Recommanded?:</h3>
+    <p><%= @recommandation.recommanded %></p>
+    
+    <h3>Context:</h3>
+    <p><%= @recommandation.context %></p>
+</div>
+
+
+

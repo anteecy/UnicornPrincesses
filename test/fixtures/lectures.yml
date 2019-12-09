@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course_number: 
+  section_number: 
+  day: MyString
+  time: MyString
+  teacher: MyString
+  has_lab: false
+
+two:
+  course_number: 
+  section_number: 
+  day: MyString
+  time: MyString
+  teacher: MyString
+  has_lab: false

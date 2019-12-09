@@ -1,0 +1,33 @@
+<% if @courses.empty? %>
+    <p>There are no courses currently!</p>
+
+<% else %>
+    <table style="width:100%">
+        <tr>
+            <th>Course Number</th>
+            <th>Section Number</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Days</th>
+            <th>Offered Currently</th>
+        </tr>
+    <% @courses.each do |course| %> 
+        <tr>
+            <td><%= course.course_number %></td>
+            <td><%= course.section_number %></td>
+            <td><%= course.start_time %></td>
+            <td><%= course.end_time %></td>
+            <td><%= course.days %></td>
+            <td>
+                <% if course.is_offered %>
+                    Yes
+                <% else %>
+                    No
+                <% end %>
+            </td>
+        </tr>
+    <% end %>
+    </table>
+
+<% end %>
+

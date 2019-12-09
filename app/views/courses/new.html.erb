@@ -1,0 +1,24 @@
+<% if user_signed_in? && current_user.is_teacher %>
+<%#Only teachers can access the webpage%>
+<div id="form-wrapper">
+    <h2>Create New Course</h2>
+    <%= form_with scope: :course, url: courses_path, local: true do |form| %>
+        <p>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+        </p>
+
+        <%# TODO: Modify field to be a set of time ranges %>
+        <p>
+        <%= form.label :availability %><br>
+        <%= form.text_field :availability %>
+        </p>
+
+        <p>
+        <%= form.submit %>
+        </p>
+    <% end %>
+</div>
+<% else %> <%#Not signed in or not a Teacher - cannot access webbpage%>
+	<p>Error: You are not a teacher. Click <a href="/">here</a> to go back to the homepage.</p>
+<% end %>

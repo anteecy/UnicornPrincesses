@@ -1,0 +1,31 @@
+<% if current_user.is_teacher? %>
+
+    <% if @recommandations.empty? %>
+        <p>Currently no recommandations!</p>
+    <% else %>
+        <table style="width: 100%">
+            <tr>
+                <th>Applicant</th>
+                <th>Applicant Email</th>
+                <th>Desired Section</th>
+                <th>Course Number</th>
+                <th>View</th>
+                <th>Endorsement</th>
+            </tr>
+        <% @applications.each do |application| %>
+            <tr>
+                <td><%= application.first_name + " " + application.last_name %></td>
+                <td><%= application.email %></td>
+                <td><%= application.courses %></td>
+                <td><%= application.courses %></td>
+                <td><%= link_to 'View', {:controller => "grader_application", :action => "show", :id => application.id } %>
+                <td><%= link_to 'Add', {:controller => "recommandationform", :action => "new", :id => application.id } %>
+            </tr>
+            </a>
+
+        <% end %>
+        </table>
+    <% end %>
+<% else %>
+    <p>You must be registered as a teacher to view this page</p>
+<% end %>

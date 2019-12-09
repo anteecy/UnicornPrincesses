@@ -1,0 +1,33 @@
+<div class="page-container">
+	<div class="title-container">
+		<h1>
+			Grader Rater
+		</h1>
+		<h3>
+			The easiest way to grade your graders
+		</h3>
+	</div>
+
+	<% if user_signed_in? %>
+		<% if !current_user.is_teacher %>
+			<div class="content-container">
+				<h2>Students</h2>
+				<p>The Computer Science and Engineering Department is looking for
+					student graders. If you are interested, you may apply by following the link in the nav bar. We offer grading
+					positions for several course sections. Please check your availability before applying.</p>
+			</div>
+		<% else %>
+			<div class="content-container">
+				<h2>Teachers</h2>
+					<p>You may use this page in order to handle the applications students
+		submit to become graders. Additionally, you may recommend students to
+		specific grading positions using this site.</p>
+	</div>
+		<% end %>
+	<% else %>
+		<div class="content-container">
+			<h2>Welcome</h2>
+			<p>Welcome to the Computer Science and Engineering Department's Grader Webpage. We are looking for student graders. Click the Login button to register and login as a student or teacher to apply or manage grader applications.</p>
+	<% end %>
+</div>
+
